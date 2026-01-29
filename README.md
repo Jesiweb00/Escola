@@ -1,5 +1,4 @@
-# Trabalhos
----Super Trunfo---
+# Super Trunfo
 #include <stdio.h>
 
 int main() {
