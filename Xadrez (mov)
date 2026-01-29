@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+
+    /* ===== TORRE ===== */
+    /* A Torre vai andar 5 casas para a DIREITA */
+    /* Vamos usar o FOR */
+
+    int casasTorre = 5;
+    int i;
+
+    printf("Movimento da Torre:\n");
+
+    for (i = 1; i <= casasTorre; i++) {
+        printf("Direita\n");
+    }
+
+
+    /* ===== BISPO ===== */
+    /* O Bispo vai andar 5 casas na diagonal: CIMA + DIREITA */
+    /* Vamos usar o WHILE */
+
+    int casasBispo = 5;
+    int contadorBispo = 1;
+
+    printf("\nMovimento do Bispo:\n");
+
+    while (contadorBispo <= casasBispo) {
+        printf("Cima, Direita\n");
+        contadorBispo++;
+    }
+
+
+    /* ===== RAINHA ===== */
+    /* A Rainha vai andar 8 casas para a ESQUERDA */
+    /* Vamos usar o DO-WHILE */
+
+    int casasRainha = 8;
+    int contadorRainha = 1;
+
+    printf("\nMovimento da Rainha:\n");
+
+    do {
+        printf("Esquerda\n");
+        contadorRainha++;
+    } while (contadorRainha <= casasRainha);
+
+    return 0;
+}
