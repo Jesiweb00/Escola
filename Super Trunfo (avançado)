@@ -1,0 +1,121 @@
+#include <stdio.h>
+
+int main() {
+
+    //---CARTAS PRE-CADASTRADAS---
+
+    char cidade1[] = "Sao Paulo";
+    int populacao1 = 12325000;
+    float area1 = 1521.11;
+    float pib1 = 699.28;
+    int pontos1 = 50;
+    float densidade1 = populacao1 / area1;
+
+    char cidade2[] = "Rio de Janeiro";
+    int populacao2 = 6748000;
+    float area2 = 1200.25;
+    float pib2 = 300.50;
+    int pontos2 = 30;
+    float densidade2 = populacao2 / area2;
+
+    int atributo1, atributo2;
+
+    float valor1_c1 = 0, valor1_c2 = 0;
+    float valor2_c1 = 0, valor2_c2 = 0;
+
+    float soma1, soma2;
+
+    //---MENU DO PRIMEIRO ATRIBUTO---
+    printf("Escolha o PRIMEIRO atributo:\n");
+    printf("1 - Populacao\n");
+    printf("2 - Area\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos Turisticos\n");
+    printf("5 - Densidade Demografica\n");
+    printf("Opcao: ");
+    scanf("%d", &atributo1);
+
+    //---MENU DO SEGUNDO ATRIBUTO---
+    printf("\nEscolha o SEGUNDO atributo (diferente do primeiro):\n");
+
+    if (atributo1 != 1) printf("1 - Populacao\n");
+    if (atributo1 != 2) printf("2 - Area\n");
+    if (atributo1 != 3) printf("3 - PIB\n");
+    if (atributo1 != 4) printf("4 - Pontos Turisticos\n");
+    if (atributo1 != 5) printf("5 - Densidade Demografica\n");
+
+    printf("Opcao: ");
+    scanf("%d", &atributo2);
+
+    //---PRIMEIRO ATRIBUTO---
+    switch (atributo1) {
+        case 1:
+            valor1_c1 = populacao1;
+            valor1_c2 = populacao2;
+            break;
+        case 2:
+            valor1_c1 = area1;
+            valor1_c2 = area2;
+            break;
+        case 3:
+            valor1_c1 = pib1;
+            valor1_c2 = pib2;
+            break;
+        case 4:
+            valor1_c1 = pontos1;
+            valor1_c2 = pontos2;
+            break;
+        case 5:
+            valor1_c1 = densidade1;
+            valor1_c2 = densidade2;
+            break;
+        default:
+            printf("Opcao invalida!\n");
+            return 0;
+    }
+
+    //---SEGUNDO ATRIBUTO---
+    switch (atributo2) {
+        case 1:
+            valor2_c1 = populacao1;
+            valor2_c2 = populacao2;
+            break;
+        case 2:
+            valor2_c1 = area1;
+            valor2_c2 = area2;
+            break;
+        case 3:
+            valor2_c1 = pib1;
+            valor2_c2 = pib2;
+            break;
+        case 4:
+            valor2_c1 = pontos1;
+            valor2_c2 = pontos2;
+            break;
+        case 5:
+            valor2_c1 = densidade1;
+            valor2_c2 = densidade2;
+            break;
+        default:
+            printf("Opcao invalida!\n");
+            return 0;
+    }
+
+    //---SOMA DOS ATRIBUTOS---
+    soma1 = valor1_c1 + valor2_c1;
+    soma2 = valor1_c2 + valor2_c2;
+
+    //---exebição de tudo---
+    printf("\nComparacao entre %s e %s\n", cidade1, cidade2);
+
+    printf("%s -> %.2f + %.2f = %.2f\n", cidade1, valor1_c1, valor2_c1, soma1);
+    printf("%s -> %.2f + %.2f = %.2f\n", cidade2, valor1_c2, valor2_c2, soma2);
+
+    //---RESULTADO (OPERADOR TERNARIO)---
+    printf("\nResultado: ");
+    (soma1 > soma2) ? printf("%s venceu!\n", cidade1) :
+    (soma2 > soma1) ? printf("%s venceu!\n", cidade2) :
+                      printf("Empate!\n");
+
+    return 0;
+}
